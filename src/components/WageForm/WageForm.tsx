@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Form } from 'react-final-form';
+import PeriodRadio from '../Fields/PeriodRadio';
 import { IWage, WagePeriod } from '../types';
 
 const initialValues: IWage = {
@@ -17,7 +18,12 @@ const WageForm: FC = () => {
             <Form
                 initialValues={initialValues}
                 onSubmit={onSubmit}
-                render={() => null}
+                render={({ handleSubmit }) => (
+                    <form onSubmit={handleSubmit}>
+                        <PeriodRadio />
+                        <button type='submit'>Submit</button>
+                    </form>
+                )}
             />
         </>
     );
