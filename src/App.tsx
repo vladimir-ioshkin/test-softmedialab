@@ -1,5 +1,7 @@
+import WageForm from './components/WageForm/WageForm';
+
 const App = () => {
-    return <></>;
+    return <WageForm />;
 };
 
 export default App;
