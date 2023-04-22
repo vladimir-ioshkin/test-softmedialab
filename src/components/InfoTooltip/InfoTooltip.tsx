@@ -23,7 +23,7 @@ const InfoTooltip: FC<{ text: string }> = ({ text }) => {
                 target={tooltipTriggerRef.current}
                 placement='bottom-start'
                 show={hover || show}
-                offset={[11, 5]}
+                offset={[10, 5]}
             >
                 {/* eslint-disable @typescript-eslint/no-unused-vars */}
                 {({

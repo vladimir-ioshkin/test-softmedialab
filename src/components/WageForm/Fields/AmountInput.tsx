@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Field } from 'react-final-form';
 import CustomInput from '../../CustomInput/CustomInput';
+import { getFormattedAmount, getDigits } from '../../../helpers';
 import { WagePeriod } from '../../types';
 
 const labelsMap = {
@@ -16,12 +17,9 @@ const AmountInput: FC<{ period: WagePeriod }> = ({ period }) => {
             {({ input }) => (
                 <CustomInput
                     {...input}
-                    onChange={(e: { target: { value: string; }; }) => input.onChange(e.target.value.replace(/[^+\d]/g, ''))}
+                    onChange={(e) => input.onChange(getDigits(e.target.value))}
                     onBlur={() => {
-                        const value = Number(input.value);
-                        if (!value) return;
-
-                        const formattedValue = Intl.NumberFormat('ru-RU').format(value);
+                        const formattedValue = getFormattedAmount(input.value);
                         input.onChange(formattedValue);
                     }}
                     label={labelsMap[period]}

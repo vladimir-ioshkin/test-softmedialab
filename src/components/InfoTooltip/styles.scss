@@ -4,13 +4,10 @@
 
 .info-tooltip-trigger {
   position: relative;
-  font-size: 1rem;
-  width: 1.6em;
-  height: 1.6em;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 50%;
-  border-width: max(2px, 0.2em);
-  border-style: solid; 
-  border-color: $gray-500;
+  border: 2px solid $gray-500;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +21,7 @@
     background: $gray-500;
     width: 0.2em;
     border-radius: 0.1em;
-    left: 0.5em;
+    transform: translate(-0.025em);
   }
 
   &:before {
@@ -40,21 +37,23 @@
   &.opened:after,
   &.opened:before {
     width: 0.15em;
-    height: 0.65em;
-    top: 0.3em;
-    left: 0.5em;
+    height: 0.6em;
   }
 
   &.opened:before {
+    bottom: 0.285em;
+    left: 0.525em;
     transform: rotate(45deg);
   }
 
   &.opened:after {
+    top: 0.325em;
+    right: 0.55em;
     transform: rotate(-45deg);
   }
 
   &:hover {
-    border-color: $indigo;
+    border: 2px solid $indigo;
 
     &:before,
     &:after {
