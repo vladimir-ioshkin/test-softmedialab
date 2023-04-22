@@ -40,7 +40,6 @@ const WageForm: FC = () => {
                         {values.period === WagePeriod.MonthlyWage && (
                             <MonthlyDetails amount={values.amount} withoutTax={values.withoutTax} />
                         )}
-                        <button type='submit'>Submit</button>
                     </form>
                 )}
             />
