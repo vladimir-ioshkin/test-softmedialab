@@ -14,7 +14,7 @@ const PeriodRadio: FC = () => {
             </Field>
             <Field name='period' type='radio' value={WagePeriod.MinimalWage}>
                 {({ input }) => (
-                    <div className='d-flex gap-2'>
+                    <div className='d-flex gap-2 align-items-center'>
                         <CustomRadio {...input} id={WagePeriod.MinimalWage} label='МРОТ' />
                         <InfoTooltip text='МРОТ – минимальный размер оплаты труда. Разный для разных регионов.' />
                     </div>

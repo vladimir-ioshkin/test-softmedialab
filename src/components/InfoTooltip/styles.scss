@@ -3,62 +3,22 @@
 @import "src/custom.variables";
 
 .info-tooltip-trigger {
-  position: relative;
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 50%;
-  border: 2px solid $gray-500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
+  width: 1.4em;
+  height: 1.4em;
   cursor: pointer;
-
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    background: $gray-500;
-    width: 0.2em;
-    border-radius: 0.1em;
-    transform: translate(-0.025em);
-  }
-
-  &:before {
-    height: 0.5em;
-    bottom: 0.2em;
-  }
-
-  &:after {
-    height: 0.2em;
-    top: 0.2em;
-  }
-
-  &.opened:after,
-  &.opened:before {
-    width: 0.15em;
-    height: 0.6em;
-  }
-
-  &.opened:before {
-    bottom: 0.285em;
-    left: 0.525em;
-    transform: rotate(45deg);
-  }
-
-  &.opened:after {
-    top: 0.325em;
-    right: 0.55em;
-    transform: rotate(-45deg);
-  }
+  background-color: $gray-500;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-image: url( '/src/images/info.svg' );
+  mask-image: url( '/src/images/info.svg' );
 
   &:hover {
-    border: 2px solid $indigo;
+    background-color: $indigo;
+  }
 
-    &:before,
-    &:after {
-      background: $indigo;
-    }
+  &.opened {
+    -webkit-mask-image: url( '/src/images/x-circle.svg' );
+    mask-image: url( '/src/images/x-circle.svg' );
   }
 }
 
@@ -78,7 +38,7 @@
     border-style: solid;
     border-width: 0.4em;
     border-color: transparent transparent $indigo $indigo;
-    top: -0.7em;
+    top: -0.6em;
     left: 0;
   }
 }
